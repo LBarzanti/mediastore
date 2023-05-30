@@ -1,15 +1,9 @@
 <?php
-    public $conn;
-    public function getConnection()
+    $db = new mysqli("db", "root", "progetto", "ecommerce", "3306");
+    $query = "SELECT * FROM prodotto";
+    $result = $db->query($query);
+    while($row = $result->fetch_assoc())
     {
-        $this.conn = null;
-        try{
-            $this->conn = new PDO("mysql:host=localhost:8081;dbname=ecommerce", "root", "progetto");
-            $this->conn->exec("set names utf8");
-        }catch(PDOException $e)
-        {
-            echo "Database offline: " . $e->getMessage();
-        }
-        return $this->conn;
+        echo " id: $row[id], descrizione: $row[descrizione], modello: $row[modello], prezzo: $row[prezzo] ";
     }
 ?>
