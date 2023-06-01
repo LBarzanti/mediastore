@@ -15,6 +15,8 @@
         </div>
     </form>
 
+    <p> {{ resp }}</p>
+
 </template>
 
 <script>
@@ -23,14 +25,21 @@
     return {
       mail: "",
       password: "",
-      formSubmittend: false
+      formSubmittend: false,
+      resp: "0"
     }
   },
   methods:
   {
     onSubmit()
     {
-        this.formSubmittend = true
+        fetch('http://localhost:8080/credenziali.php/', {
+            method: 'POST',
+            headers: {
+                'Accept' : 'application/json'
+            },
+            body : JSON.stringify({ mail : this.mail, password : this.password })
+        }).then(res => res.json).then(data => this.resp = data)
     }
   }
 }
