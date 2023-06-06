@@ -6,6 +6,7 @@ import smartphone from '../views/SmartphoneView.vue'
 import televisori from '../views/TelevisoriView.vue'
 import computer from '../views/ComputerView.vue'
 import contact from '../views/ContactView.vue'
+import brand from '../views/BrandView.vue'
 import { compile } from 'vue'
 
 const router = createRouter({
@@ -45,6 +46,21 @@ const router = createRouter({
       path:'/contact',
       name:'contact',
       component:contact
+    },
+    {
+      path:'/smartphone/:brand',
+      name:'smartphoneBrand',
+      component: brand
+    },
+    {
+      path:'/tv/:brand',
+      name:'tvBrand',
+      component: brand
+    },
+    {
+      path:'/computer/:brand',
+      name:'computerBrand',
+      component: brand
     }
   ]
 })

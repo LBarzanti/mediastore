@@ -5,7 +5,7 @@
       <div class="card-body">
         <h5 class="card-title">{{brand.brand}}</h5>
         <p class="card-text">{{ brand.description }}</p>
-        <RouterLink :to="'/tv/' + brand.brand" role="button" class="btn btn-primary">Go to Products</RouterLink>
+        <RouterLink :to="{name: 'tvBrand', params:{brand: brand.brand}}" role="button" class="btn btn-primary">Go to Products</RouterLink>
       </div>
     </div>
   </div>

@@ -18,15 +18,6 @@
                         <RouterLink class="nav-link" v-for="categoria in resp" :to="'/' + categoria"><li><a class="dropdown-item" href="#">{{categoria}}</a></li></RouterLink>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Language
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">IT</a></li>
-                        <li><a class="dropdown-item" href="#"></a></li>
-                    </ul>
-                </li>
                 <li style="margin-left:300px">
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -34,7 +25,7 @@
                     </form>
                 </li>
                 <li class="nav-item dropdown">
-                    <button class="nav-link dropdown-toggle" :on-click="checkLogged" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="nav-link dropdown-toggle" @click="checkLogged()" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="../assets/profile.png" style="width:30px">
                     </button>
                     <ul class="dropdown-menu">
