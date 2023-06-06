@@ -7,6 +7,9 @@ import 'bootstrap/dist/js/bootstrap.js'
 
 const app = createApp(App)
 
-app.use(router)
-app.mount('#app')
+app.config.globalProperties.token = "TOKEN"
+app.config.globalProperties.setToken = function (value) {
+    this.token=value
+}
+app.use(router).mount('#app')
 

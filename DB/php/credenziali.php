@@ -4,7 +4,7 @@
     header("Allow: POST");
     header("Access-Control-Allow-Origin: *");
     $data = json_decode(file_get_contents('php://input'), true);
-    $db = new mysqli("db", "root", "progetto", "ecommerce", "3306");
+    include "./connect.php";
     $query = "SELECT * FROM credenziali";
     $result = $db->query($query);
     $checkMail = false;
@@ -20,7 +20,6 @@
             else
             {
                 echo '{"error" : "wrong password"}';
-                $checkMail = false;
                 exit();
             }
             $checkMail = true;
